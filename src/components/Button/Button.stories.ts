@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from './Button';
+import { Button, ButtonTypes } from './Button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
@@ -9,6 +9,10 @@ const meta = {
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'centered',
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/abwSOf8tjlq7wdoVCcI2pv/Untitled?type=design&node-id=3-5&mode=dev'
+    }
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
@@ -35,13 +39,13 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     label: 'Hello SB',
-    btnType: 'primary'
+    btnType: 'primary' as ButtonTypes
   },
 };
 
 export const Secondary: Story = {
   args: {
     label: 'Button',
-    btnType: 'secondary'
+    btnType: 'secondary' as ButtonTypes
   },
 };
